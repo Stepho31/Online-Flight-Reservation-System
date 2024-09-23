@@ -1,0 +1,176 @@
+﻿
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airline Reservation System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        header, .title-container {
+            background-color: #F40C1A;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff; 
+            box-shadow: 0 0 10px rgba(0,0,0,0.1); 
+            border-radius: 10px;
+        }
+
+        button {
+            background-color: #F40C1A;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #002244;
+        }
+
+        form {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="email"],
+        input[type="tel"],
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus,
+        input[type="email"]:focus,
+        input[type="tel"]:focus {
+            border-color: #F40C1A;
+            outline: none;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #ccc;
+            margin: 20px 0;
+        }
+
+        .notification-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .notification-container label,
+        .notification-container input[type="radio"] {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Registration</h1>
+    </header>
+
+    <div class="container notification-container">
+        <h2>User Registration</h2>
+        <form id="registrationForm" action="http://localhost:8888/register.php" method="post">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Register</button>
+        </form>
+    </div>
+
+    <div class="container notification-container">
+        <h2>User Login</h2>
+        <form id="loginForm" action="http://localhost:8888/login.php" method="post">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <div class="container notification-container">
+        <h2>Send Flight Notification</h2>
+        <form onsubmit="event.preventDefault(); sendNotification();">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" required><br><br>
+            <label>Notification Type:</label>
+            <input type="radio" id="emailRadio" name="notification" value="email" checked>
+            <label for="emailRadio">Email</label>
+            <input type="radio" id="phoneRadio" name="notification" value="phone">
+            <label for="phoneRadio">Phone</label>
+            <input type="radio" id="bothRadio" name="notification" value="both">
+            <label for="bothRadio">Both</label><br><br>
+            <button type="submit">Send Notification</button>
+        </form>
+    </div>
+
+    <div class="container notification-container">
+        <h2>Reminders Before Boarding</h2>
+        <button onclick="remindBeforeBoarding()">Remind Before Boarding</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Colorado Tech Skies. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function sendNotification() {
+            var email = document.getElementById("email").value;
+            var phoneNumber = document.getElementById("phone").value;
+            var notificationType = document.querySelector('input[name="notification"]:checked').value;
+
+            // Simulate sending email or text notification
+            var notificationMessage = "Flight update:\nYour flight departure time has changed to 09:30 AM.";
+            if (notificationType === "email" || notificationType === "both") {
+                alert("Email notification sent to " + email + ": " + notificationMessage);
+            }
+            if (notificationType === "phone" || notificationType === "both") {
+                alert("Text notification sent to " + phoneNumber + ": " + notificationMessage);
+            }
+        }
+
+        function remindBeforeBoarding() {
+            // Simulate sending reminders before boarding
+            var email = document.getElementById("email").value;
+            var phoneNumber = document.getElementById("phone").value;
+
+            alert("Flight Reminder:\nYou have 1 hour until boarding time. Please proceed to the gate.");
+            alert("Flight Reminder:\nYou have 30 minutes until boarding time. Please proceed to the gate.");
+        }
+    </script>
+</body>
+</html>

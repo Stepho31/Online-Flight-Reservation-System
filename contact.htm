@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Contact Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        header {
+            background-color: #F40C1A;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        .links {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+            .links a {
+                display: inline-block;
+                padding: 10px;
+                background-color: #F40C1A;
+                color: #fff;
+                text-decoration: none;
+                margin-right: 10px;
+                border-radius: 5px;
+            }
+
+                .links a:hover {
+                    background-color: #002244;
+                }
+
+        footer {
+            background-color: #F40C1A;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+
+        <h1>Contact Us</h1>
+    </header>
+    <a href="Airline.html">Go Home</a>
+    <main>
+        <section>
+            <h2>Customer Support</h2>
+            <p>If you need assistance or have any questions, please feel free to contact our customer support team.</p>
+            <p>Email: support@airlinereservation.com</p>
+            <p>Phone: 1-800-123-4567</p>
+        </section>
+        <section>
+            <h2>
+                Feedback
+            </h2>
+            <p>We value your feedback. Please let us know about your experience with our airline reservation system.</p>
+            <form action="submit_feedback.php" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                <button type="submit">Submit</button>
+                <form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Airline Reservation System</p>
+    </footer>

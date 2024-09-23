@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fly Colorado Tech Skies</title>
+    <style>
+        /* CSS styles can be added here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #F40C1A;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        select, input[type="date"], input[type="number"] {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #F40C1A;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+            button:hover {
+                background-color: #F40C1A;
+            }
+
+        .destination-list {
+            list-style: none;
+            padding: 0;
+        }
+
+            .destination-list li {
+                margin-bottom: 5px;
+            }
+    .button-container {
+        margin-top: 20px; /* Adjust the value as needed */
+    }
+    #ticket-price-container {
+            display: none;
+        }
+</style>
+  
+</head>
+<body>
+    <header>
+        <h1>Fly Colorado Tech Skies</h1>
+        <p>Your Domestic Gateways to the Skies</p>
+    </header>
+    <a href="Airline.html">Back</a>
+    <div class="container">
+        <h2>Flight Options to All 50 US States</h2>
+
+        <form id="flight-search-form" action="http://localhost:8888/book_flight.php" method="post" onsubmit="return showConfirmation()">
+            <label for="from">From:</label>
+            <select id="from" name="from" required>
+                <option value="" disabled selected>Select Departure State</option>
+                <option value="" disabled selected>Select Destination State</option>
+                <option value="Alabama">Alabama</option>
+                <option value="Alaska">Alaska</option>
+                <option value="Arizona">Arizona</option>
+                <option value="Arkansas">Arkansas</option>
+                <option value="California">California</option>
+                <option value="Colorado">Colorado</option>
+                <option value="Connecticut">Connecticut</option>
+                <option value="Delaware">Delaware</option>
+                <option value="Florida">Florida</option>
+                <option value="Georgia">Georgia</option>
+                <option value="Hawaii">Hawaii</option>
+                <option value="Idaho">Idaho</option>
+                <option value="Illinois">Illinois</option>
+                <option value="Indiana">Indiana</option>
+                <option value="Iowa">Iowa</option>
+                <option value="Kansas">Kansas</option>
+                <option value="Kentucky">Kentucky</option>
+                <option value="Louisiana">Louisiana</option>
+                <option value="Maine">Maine</option>
+                <option value="Maryland">Maryland</option>
+                <option value="Massachusetts">Massachusetts</option>
+                <option value="Michigan">Michigan</option>
+                <option value="Minnesota">Minnesota</option>
+                <option value="Mississippi">Mississippi</option>
+                <option value="Missouri">Missouri</option>
+                <option value="Montana">Montana</option>
+                <option value="Nebraska">Nebraska</option>
+                <option value="Nevada">Nevada</option>
+                <option value="New Hampshire">New Hampshire</option>
+                <option value="New Jersey">New Jersey</option>
+                <option value="New Mexico">New Mexico</option>
+                <option value="New York">New York</option>
+                <option value="North Carolina">North Carolina</option>
+                <option value="North Dakota">North Dakota</option>
+                <option value="Ohio">Ohio</option>
+                <option value="Oklahoma">Oklahoma</option>
+                <option value="Oregon">Oregon</option>
+                <option value="Pennsylvania">Pennsylvania</option>
+                <option value="Rhode Island">Rhode Island</option>
+                <option value="South Carolina">South Carolina</option>
+                <option value="South Dakota">South Dakota</option>
+                <option value="Tennessee">Tennessee</option>
+                <option value="Texas">Texas</option>
+                <option value="Utah">Utah</option>
+                <option value="Vermont">Vermont</option>
+                <option value="Virginia">Virginia</option>
+                <option value="Washington">Washington</option>
+                <option value="West Virginia">West Virginia</option>
+                <option value="Wisconsin">Wisconsin</option>
+                <option value="Wyoming">Wyoming</option>
+            </select>
+                <label for="to">To:</label>
+                <select id="to" name="to" required>
+                        <option value="" disabled selected>Select Destination State</option>
+
+                        <option value="Alabama">Alabama</option>
+                        <option value="Alaska">Alaska</option>
+                        <option value="Arizona">Arizona</option>
+                        <option value="Arkansas">Arkansas</option>
+                        <option value="California">California</option>
+                        <option value="Colorado">Colorado</option>
+                        <option value="Connecticut">Connecticut</option>
+                        <option value="Delaware">Delaware</option>
+                        <option value="Florida">Florida</option>
+                        <option value="Georgia">Georgia</option>
+                        <option value="Hawaii">Hawaii</option>
+                        <option value="Idaho">Idaho</option>
+                        <option value="Illinois">Illinois</option>
+                        <option value="Indiana">Indiana</option>
+                        <option value="Iowa">Iowa</option>
+                        <option value="Kansas">Kansas</option>
+                        <option value="Kentucky">Kentucky</option>
+                        <option value="Louisiana">Louisiana</option>
+                        <option value="Maine">Maine</option>
+                        <option value="Maryland">Maryland</option>
+                        <option value="Massachusetts">Massachusetts</option>
+                        <option value="Michigan">Michigan</option>
+                        <option value="Minnesota">Minnesota</option>
+                        <option value="Mississippi">Mississippi</option>
+                        <option value="Missouri">Missouri</option>
+                        <option value="Montana">Montana</option>
+                        <option value="Nebraska">Nebraska</option>
+                        <option value="Nevada">Nevada</option>
+                        <option value="New Hampshire">New Hampshire</option>
+                        <option value="New Jersey">New Jersey</option>
+                        <option value="New Mexico">New Mexico</option>
+                        <option value="New York">New York</option>
+                        <option value="North Carolina">North Carolina</option>
+                        <option value="North Dakota">North Dakota</option>
+                        <option value="Ohio">Ohio</option>
+                        <option value="Oklahoma">Oklahoma</option>
+                        <option value="Oregon">Oregon</option>
+                        <option value="Pennsylvania">Pennsylvania</option>
+                        <option value="Rhode Island">Rhode Island</option>
+                        <option value="South Carolina">South Carolina</option>
+                        <option value="South Dakota">South Dakota</option>
+                        <option value="Tennessee">Tennessee</option>
+                        <option value="Texas">Texas</option>
+                        <option value="Utah">Utah</option>
+                        <option value="Vermont">Vermont</option>
+                        <option value="Virginia">Virginia</option>
+                        <option value="Washington">Washington</option>
+                        <option value="West Virginia">West Virginia</option>
+                        <option value="Wisconsin">Wisconsin</option>
+                        <option value="Wyoming">Wyoming</option>
+                    </select>
+                    <label for="depart-date">Departure Date:</label>
+                    <input type="date" id="depart-date" name="depart-date" required>
+                
+                    <label for="return-date">Return Date:</label>
+                    <input type="date" id="return-date" name="return-date">
+                
+                    <label for="adults">Adults:</label>
+                    <input type="number" id="adults" name="adults" min="1" value="1" required>
+                
+                    <label for="children">Children:</label>
+                    <input type="number" id="children" name="children" min="0" value="0" required>
+                
+                    <label for="class">Class:</label>
+                    <select id="class" name="class" onchange="showTicketPrice()" required>
+                        <option value="" disabled selected>Select Class</option>
+                        <option value="Economy">Economy</option>
+                        <option value="First Class">First Class</option>
+                    </select>
+
+                    <div id="ticket-price-container">
+                        <label for="ticket-price">Ticket Price:</label>
+                        <input type="text" id="ticket-price" name="ticket-price" readonly>
+                    </div>
+
+                    <label for="card-number">Card Number:</label>
+                    <input type="text" id="card-number" name="card-number" required>
+
+                    <label for="card-expiry">Expiry Date:</label>
+                    <input type="month" id="card-expiry" name="card-expiry" required>
+
+                    <label for="card-cvv">CVV:</label>
+                    <input type="text" id="card-cvv" name="card-cvv" maxlength="3" required>
+
+                    <div class="button-container"></div>
+                    <button type="submit">Book Flight</button>
+                </form>
+                
+                <h2>Featured Destinations</h2>
+                <ul class="destination-list">
+                    <!-- Add featured destinations for different states here -->
+                    <li><strong>California</strong>: Los Angeles, San Francisco, San Diego</li>
+                    <li><strong>New York</strong>: New York City, Buffalo, Albany</li>
+                    <!-- Add more destinations -->
+                </ul>
+            </div>
+            <script>
+                function showConfirmation() {
+                    // Show the pop-up message
+                    alert("Your flight has been booked. Thank you for booking with us!");
+                    return true; // Allow form submission to proceed
+                }
+
+                function showTicketPrice() {
+                    const selectedClass = document.getElementById('class').value;
+                    let ticketPrice;
+
+                    // Set a fixed price based on class
+                    if (selectedClass === 'Economy') {
+                        ticketPrice = 150;
+                    } else if (selectedClass === 'First Class') {
+                        ticketPrice = 300;
+                    } else {
+                        ticketPrice = 0; // Default value if no class is selected
+                    }
+
+                    // Display the ticket price
+                    document.getElementById('ticket-price').value = '$' + ticketPrice.toFixed(2);
+
+                    // Show the ticket price container
+                    document.getElementById('ticket-price-container').style.display = 'block';
+                }
+            </script>
+        </body>
+        </html >

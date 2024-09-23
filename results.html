@@ -1,0 +1,44 @@
+<div id="flight-options"></div>
+<script>
+    // Get references to form elements
+    const form = document.querySelector('form');
+    const flightOptionsDiv = document.getElementById('flight-options');
+
+    // Event listener for form submission
+    form.addEventListener('submit', function (event) {
+        event.preventDefault(); // Prevent form from submitting
+
+        // Retrieve selected options from form
+        const from = document.getElementById('from').value;
+        const to = document.getElementById('to').value;
+        const departDate = document.getElementById('depart-date').value;
+        const returnDate = document.getElementById('return-date').value;
+        const passengers = document.getElementById('passengers').value;
+        const selectedClass = document.getElementById('class').value;
+
+        // Here you would make an API call to fetch flight options based on the selected criteria
+        // For this example, I'll just generate some dummy flight options
+        const dummyFlightOptions = [
+            { airline: 'FlyUS Airways', flightNumber: 'FUS123', departure: '12:00 PM', arrival: '2:00 PM', price: '$200' },
+            { airline: 'SkyHigh Airlines', flightNumber: 'SHA456', departure: '3:00 PM', arrival: '5:00 PM', price: '$250' },
+            // Add more dummy flight options as needed
+        ];
+
+        // Generate HTML for displaying flight options
+        let flightOptionsHTML = '<h2>Flight Options</h2>';
+        dummyFlightOptions.forEach(option => {
+            flightOptionsHTML += `
+               <div>
+                 <p>Airline: ${option.airline}</p>
+                 <p>Flight Number: ${option.flightNumber}</p>
+                 <p>Departure: ${option.departure}</p>
+                 <p>Arrival: ${option.arrival}</p>
+                 <p>Price: ${option.price}</p>
+               </div>
+             `;
+        });
+
+        // Display flight options on the webpage
+        flightOptionsDiv.innerHTML = flightOptionsHTML;
+    });
+</script>
